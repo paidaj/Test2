@@ -1,46 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favorite animal</title>
-    <!-- This is an internal stylsheet-->
-    <!-- This is an internal stylesheet -->
-    <style>
-      #image{
-          width: 200px;
-      }
 
-      body{
-          background: linear-gradient(to bottom right, lightblue, white);
-          font-size: 15px;
-          font-family: cursive, Arial;
-      }
-    
-    
-    </style>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Favorite animal</title>
+	<!-- This is an internal stylsheet-->
+	<!-- This is an internal stylesheet -->
+	<style>
+		#image {
+			width: 200px;
+            animation: disappear 3s linear forwards;
+		}
+
+		body {
+			background: linear-gradient(to bottom right, lightblue, white);
+
+			font-size: 15px;
+			font-family: cursive, Arial;
+		}
+
+		.firstParagraph {
+			border: dashed 1px black;
+			margin: 10px;
+			padding: 10px;
+		}
+
+		#secondParagraph {
+			border: dotted 1px black;
+			margin: 5px;
+			padding: 5px;
+		}
+
+		.span1 {
+			font-weight: 700;
+		}
+
+		.animate {
+			animation-name: spin;
+			animation-duration: 3s;
+			text-align: center;
+		}
+
+		@keyframes spin {
+			0% {
+				transform: scale(0);
+				transform: rotate(2deg)
+			}
+
+			50% {
+				color: blue;
+				transform: rotate(50deg)
+			}
+
+			100% {
+				transform: scale(0);
+				transform: rotate(360deg)
+			}
+        }
+
+
+		@keyframes disappear {
+            0%{
+                transform: scale(1);
+                opacity: 1
+            }
+
+            100%{
+                transform: scale(0);
+                opacity: 0
+            }
+        }
+
+	</style>
 </head>
+
 <body>
-    <h2>Penguins 🐧</h2>
-    <div class="firstParagraph">
-    <p>
-    Fiordland penguin, (Eudyptes pachyrhynchus), 
-    also called Fiordland crested penguin, Fiordland 
-    also spelled Fjordland, species of crested penguin 
-    (genus Eudyptes, order Sphenisciformes) characterized 
-    by a thick stripe of pale yellow feather plumes above 
-    each eye (the superciliary stripe) that extends from the 
-    bill to the rear of the head
-    </p>
-    </div>
-    <hr>
-    <div id="secondParagraph">
-    <p>
-    Penguins are my favorite animal because I like them :)
-    </p>
-    </div>
-    <img src="http://pngimg.com/uploads/madagascar_penguins/madagascar_penguins_PNG79.png"
+	<h2 class="animate">Penguins 🐧</h2>
+	<div class="firstParagraph">
+		<p>
+			Fiordland penguin, (Eudyptes pachyrhynchus),
+			also called Fiordland crested penguin, Fiordland
+			also spelled Fjordland, species of crested penguin
+			(genus Eudyptes, order Sphenisciformes) characterized
+			by a thick stripe of <span class="span1"> pale yellow feather plumes </span> above
+			each eye (the superciliary stripe) that extends from the
+			bill to the rear of the head
+		</p>
+	</div>
+	<hr>
+	<div id="secondParagraph">
+		<p>
+			Penguins are my favorite animal because I like them :)
+		</p>
+	</div>
+	<img src="http://pngimg.com/uploads/madagascar_penguins/madagascar_penguins_PNG79.png"
      alt="Penguin dancing" id="image"/>
 </body>
-</html>
 
+</html>
